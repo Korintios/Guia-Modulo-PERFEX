@@ -63,14 +63,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 Module Name: Plantilla de Modulo
-Description: Modulo de Plantilla Desarrollado por REDTIC.
+Description: Descripcion del Modulo.
 Version: 1.0.0
 Requires at least: 2.3.*
 */
 
+define('INVESTIGADORES_MODULE_NAME', 'investigadores');
+
+register_activation_hook(INVESTIGADORES_MODULE_NAME, 'investigator_module_activation_hook');
+
 function investigator_module_activation_hook()
 {
-	$CI = &get_instance();
+	$CI = &get_instance(); 
 	require_once(__DIR__ . '/install.php');
 }
 ?>
